@@ -1,0 +1,2 @@
+- `npm run dev` runs the site
+- `npm run codegen` refreshes the FE types from graphql to sync with backend. run when schema changes on BE.
