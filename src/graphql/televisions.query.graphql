@@ -1,0 +1,10 @@
+query GetTelevisions {
+  televisions {
+    brand
+    modelNumber
+    composite
+    svideo
+    component
+    widescreen
+  }
+}

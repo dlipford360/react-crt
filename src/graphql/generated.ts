@@ -14,8 +14,26 @@ export type Scalars = {
   Date: any;
 };
 
-export type CathodeRayTube = {
-  __typename?: 'CathodeRayTube';
+export type Message = {
+  __typename?: 'Message';
+  body: Scalars['String'];
+  createdAt: Scalars['Date'];
+  id: Scalars['ID'];
+};
+
+export type Query = {
+  __typename?: 'Query';
+  televisions: Array<Television>;
+  users: Array<User>;
+};
+
+
+export type QueryTelevisionsArgs = {
+  composite?: InputMaybe<Scalars['Int']>;
+};
+
+export type Television = {
+  __typename?: 'Television';
   brand?: Maybe<Scalars['String']>;
   coaxial?: Maybe<Scalars['Int']>;
   component?: Maybe<Scalars['Int']>;
@@ -33,24 +51,6 @@ export type CathodeRayTube = {
   widescreen?: Maybe<Scalars['Boolean']>;
 };
 
-export type Message = {
-  __typename?: 'Message';
-  body: Scalars['String'];
-  createdAt: Scalars['Date'];
-  id: Scalars['ID'];
-};
-
-export type Query = {
-  __typename?: 'Query';
-  cathoderaytubes: Array<CathodeRayTube>;
-  users: Array<User>;
-};
-
-
-export type QueryCathoderaytubesArgs = {
-  composite?: InputMaybe<Scalars['Int']>;
-};
-
 export type User = {
   __typename?: 'User';
   id: Scalars['ID'];
@@ -58,10 +58,16 @@ export type User = {
   name: Scalars['String'];
 };
 
+export type GetTelevisionsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetTelevisionsQuery = { __typename?: 'Query', televisions: Array<{ __typename?: 'Television', brand?: string | null, modelNumber?: string | null, composite?: number | null, svideo?: number | null, component?: number | null, widescreen?: boolean | null }> };
+
 export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetUsersQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', name: string, messages: Array<{ __typename?: 'Message', body: string }> }> };
 
 
+export const GetTelevisionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetTelevisions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"televisions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"brand"}},{"kind":"Field","name":{"kind":"Name","value":"modelNumber"}},{"kind":"Field","name":{"kind":"Name","value":"composite"}},{"kind":"Field","name":{"kind":"Name","value":"svideo"}},{"kind":"Field","name":{"kind":"Name","value":"component"}},{"kind":"Field","name":{"kind":"Name","value":"widescreen"}}]}}]}}]} as unknown as DocumentNode<GetTelevisionsQuery, GetTelevisionsQueryVariables>;
 export const GetUsersDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetUsers"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"users"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"messages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"body"}}]}}]}}]}}]} as unknown as DocumentNode<GetUsersQuery, GetUsersQueryVariables>;
