@@ -6,33 +6,32 @@ type Props = {
 
 function TelevisionDisplay({ television }: Props) {
   return (
-    <table className="table-auto">
-      <thead>
-        <tr>
-          <th>
-            {television.brand} {television.modelNumber}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Composite</td>
-          <td>{television.composite}</td>
-        </tr>
-        <tr>
-          <td>S-video</td>
-          <td>{television.svideo}</td>
-        </tr>
-        <tr>
-          <td>Component</td>
-          <td>{television.component}</td>
-        </tr>
-        <tr>
-          <td>Widescreen</td>
-          <td>{`${television.widescreen}`}</td>
-        </tr>
-      </tbody>
-    </table>
+    <tr>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <div className="flex items-center">
+          <div className="ml-3">
+            <p className="text-gray-900 whitespace-no-wrap">
+              {television.brand}
+            </p>
+          </div>
+        </div>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          {television.modelNumber}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <p className="text-gray-900 whitespace-no-wrap">
+          {television.diagonalInches}
+        </p>
+      </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+          <span className="relative">{`${television.curved}`}</span>
+        </span>
+      </td>
+    </tr>
   )
 }
 // ...

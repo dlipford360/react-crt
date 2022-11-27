@@ -6,5 +6,10 @@ query GetTelevisions {
     svideo
     component
     widescreen
+    vcrPlayback
+    dvdPlayback
+    curved
+    coaxial
+    diagonalInches
   }
 }
