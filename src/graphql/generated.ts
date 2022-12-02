@@ -21,6 +21,17 @@ export type Message = {
   id: Scalars['ID'];
 };
 
+export type Mutation = {
+  __typename?: 'Mutation';
+  register: User;
+};
+
+
+export type MutationRegisterArgs = {
+  email: Scalars['String'];
+  password: Scalars['String'];
+};
+
 export type Query = {
   __typename?: 'Query';
   televisions: Array<Television>;
@@ -70,21 +81,22 @@ export type TelevisionPicture = {
 
 export type User = {
   __typename?: 'User';
+  email: Scalars['String'];
   id: Scalars['ID'];
   messages: Array<Message>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
 };
 
 export type GetTelevisionsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetTelevisionsQuery = { __typename?: 'Query', televisions: Array<{ __typename?: 'Television', brand?: string | null, modelNumber?: string | null, composite?: number | null, svideo?: number | null, component?: number | null, widescreen?: boolean | null, vcrPlayback?: boolean | null, dvdPlayback?: boolean | null, curved?: boolean | null, coaxial?: number | null, diagonalInches?: number | null }> };
+export type GetTelevisionsQuery = { __typename?: 'Query', televisions: Array<{ __typename?: 'Television', brand?: string | null, modelNumber?: string | null, composite?: number | null, svideo?: number | null, component?: number | null, widescreen?: boolean | null, vcrPlayback?: boolean | null, dvdPlayback?: boolean | null, curved?: boolean | null, coaxial?: number | null, diagonalInches?: number | null, yearMade?: string | null }> };
 
 export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetUsersQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', name: string, messages: Array<{ __typename?: 'Message', body: string }> }> };
+export type GetUsersQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', name?: string | null, messages: Array<{ __typename?: 'Message', body: string }> }> };
 
 
-export const GetTelevisionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetTelevisions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"televisions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"brand"}},{"kind":"Field","name":{"kind":"Name","value":"modelNumber"}},{"kind":"Field","name":{"kind":"Name","value":"composite"}},{"kind":"Field","name":{"kind":"Name","value":"svideo"}},{"kind":"Field","name":{"kind":"Name","value":"component"}},{"kind":"Field","name":{"kind":"Name","value":"widescreen"}},{"kind":"Field","name":{"kind":"Name","value":"vcrPlayback"}},{"kind":"Field","name":{"kind":"Name","value":"dvdPlayback"}},{"kind":"Field","name":{"kind":"Name","value":"curved"}},{"kind":"Field","name":{"kind":"Name","value":"coaxial"}},{"kind":"Field","name":{"kind":"Name","value":"diagonalInches"}}]}}]}}]} as unknown as DocumentNode<GetTelevisionsQuery, GetTelevisionsQueryVariables>;
+export const GetTelevisionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetTelevisions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"televisions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"brand"}},{"kind":"Field","name":{"kind":"Name","value":"modelNumber"}},{"kind":"Field","name":{"kind":"Name","value":"composite"}},{"kind":"Field","name":{"kind":"Name","value":"svideo"}},{"kind":"Field","name":{"kind":"Name","value":"component"}},{"kind":"Field","name":{"kind":"Name","value":"widescreen"}},{"kind":"Field","name":{"kind":"Name","value":"vcrPlayback"}},{"kind":"Field","name":{"kind":"Name","value":"dvdPlayback"}},{"kind":"Field","name":{"kind":"Name","value":"curved"}},{"kind":"Field","name":{"kind":"Name","value":"coaxial"}},{"kind":"Field","name":{"kind":"Name","value":"diagonalInches"}},{"kind":"Field","name":{"kind":"Name","value":"yearMade"}}]}}]}}]} as unknown as DocumentNode<GetTelevisionsQuery, GetTelevisionsQueryVariables>;
 export const GetUsersDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetUsers"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"users"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"messages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"body"}}]}}]}}]}}]} as unknown as DocumentNode<GetUsersQuery, GetUsersQueryVariables>;

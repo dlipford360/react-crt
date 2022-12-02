@@ -11,5 +11,6 @@ query GetTelevisions {
     curved
     coaxial
     diagonalInches
+    yearMade
   }
 }

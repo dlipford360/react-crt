@@ -31,6 +31,11 @@ function TelevisionDisplay({ television }: Props) {
           <span className="relative">{`${television.curved}`}</span>
         </span>
       </td>
+      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+          <span className="relative">{`${television.yearMade}`}</span>
+        </span>
+      </td>
     </tr>
   )
 }
