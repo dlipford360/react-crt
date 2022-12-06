@@ -55,7 +55,7 @@ export default function NavBarDisplay() {
 
   return (
     <div>
-      <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+      <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 text-blue-gray-900">
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <Typography
             variant="small"
@@ -68,6 +68,7 @@ export default function NavBarDisplay() {
             variant="gradient"
             size="sm"
             className="hidden lg:inline-block"
+            color="amber"
           >
             <span>Add CRT</span>
           </Button>
@@ -111,7 +112,13 @@ export default function NavBarDisplay() {
         </div>
         <MobileNav open={openNav}>
           {navList}
-          <Button variant="gradient" size="sm" fullWidth className="mb-2">
+          <Button
+            color="amber"
+            variant="gradient"
+            size="sm"
+            fullWidth
+            className="mb-2"
+          >
             <span>Add CRT</span>
           </Button>
         </MobileNav>
