@@ -13,7 +13,7 @@ import {
 import Index from "./routes/index"
 import NavBarDisplay from "./components/navbar"
 import TelevisionTable from "./routes/televisionTable"
-
+import AddTelevision from "./components/AddTelevision"
 const client = createClient({
   url: import.meta.env.VITE_API_URL || "http://localhost:4000/graphql",
 })
@@ -23,7 +23,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<NavBarDisplay />} errorElement={<ErrorPage />}>
       <Route errorElement={<ErrorPage />}>
         <Route index element={<Index />} />
-        <Route path="addcrt" element={<h1>addCRT routffe</h1>} />
+        <Route path="addcrt" element={<AddTelevision />} />
         <Route path="database" element={<TelevisionTable />} />
         <Route path="blog" element={<h1>blog possibly here</h1>} />
       </Route>
